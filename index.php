@@ -111,9 +111,6 @@
 					echo "<h1>No events today</h1>";
 				}
 
-				#if(count($allEvents) <=5){
-				#	echo '<a class="twitter-timeline" data-width="1200" href="https://twitter.com/sd83schools"data-tweet-limit="1">Latest Tweet by @sd83schools</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>';
-				#}
 			?>
 		</div>
 	</div>

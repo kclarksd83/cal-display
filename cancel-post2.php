@@ -1,15 +1,5 @@
 <?php 
-
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-	date_default_timezone_set("America/Vancouver"); 
-	require('vendor/autoload.php');
-	$tenantId="sd83.bc.ca";
-	$clientId = "c8e0629b-b11c-4db8-8738-eeb1a6b3291b";
-	$clientSecret = file_get_contents("../../calendardisplay-includes/clientsecret.txt");
-	$guzzle = new \GuzzleHttp\Client();
+	require_once('config.php');	
 ?>
 <html>
 <head>
@@ -43,7 +33,7 @@ error_reporting(E_ALL);
 				])->getBody()->getContents());
 				$accessToken = $token->access_token;
 				
-				$url = "https://graph.microsoft.com/beta/users/$room@sd83bcca.onmicrosoft.com/events/$eventid";
+				$url = "https://graph.microsoft.com/beta/users/$room@$tenantId/events/$eventid";
 				$endTime = date(DATE_ATOM);
 				$arr = array(
 					'headers' => array(
